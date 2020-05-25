@@ -15,15 +15,21 @@ public enum SearchBarPosition {
 }
 
 public struct Country: Equatable {
-    public let name: String
-    public let code: String
-    public let phoneCode: String
+    public let name: String = ""
+    public let code: String = ""
+    public let phoneCode: String = ""
     public func localizedName(_ locale: Locale = Locale.current) -> String? {
         return locale.localizedString(forRegionCode: code)
     }
     public var flag: UIImage {
         return UIImage(named: "CountryPickerView.bundle/Images/\(code.uppercased())",
             in: Bundle(for: CountryPickerView.self), compatibleWith: nil)!
+    }
+        
+    public init(name: String, code: String, phoneCode: String) {
+        self.name = name
+        self.code = code
+        self.phoneCode = phoneCode
     }
 }
 
