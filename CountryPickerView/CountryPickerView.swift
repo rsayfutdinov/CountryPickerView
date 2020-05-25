@@ -15,9 +15,9 @@ public enum SearchBarPosition {
 }
 
 public struct Country: Equatable {
-    public let name: String = ""
-    public let code: String = ""
-    public let phoneCode: String = ""
+    public var name: String = ""
+    public var code: String = ""
+    public var phoneCode: String = ""
     public func localizedName(_ locale: Locale = Locale.current) -> String? {
         return locale.localizedString(forRegionCode: code)
     }
